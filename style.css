@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --wood-dark: #2b1a0e;
+  --wood-mid: #4a2f17;
+  --wood-light: #6b4423;
+  --gold: #d4a017;
+  --gold-light: #f0c75e;
+  --sea: #0e1a2b;
+  --sea-deep: #081019;
+  --parchment: #f4e4c1;
+  --ink: #2b1a0e;
+  --red: #b33939;
+}
+
+body {
+  font-family: 'IM Fell English', serif;
+  background: radial-gradient(ellipse at top, #1b3a4b 0%, var(--sea) 45%, var(--sea-deep) 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: var(--parchment);
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(212,160,23,0.06) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(212,160,23,0.05) 0%, transparent 40%);
+}
+
+.ship {
+  width: 100%;
+  max-width: 560px;
+  background: linear-gradient(180deg, var(--wood-mid) 0%, var(--wood-dark) 100%);
+  border: 4px solid var(--wood-light);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6), inset 0 0 0 2px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  background: linear-gradient(180deg, var(--wood-light) 0%, var(--wood-mid) 100%);
+  border-bottom: 3px solid var(--gold);
+}
+
+.flag, .skull {
+  font-size: 34px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.title-wrap {
+  text-align: center;
+}
+
+.title {
+  font-family: 'Pirata One', cursive;
+  font-size: 34px;
+  letter-spacing: 2px;
+  color: var(--gold-light);
+  text-shadow: 2px 2px 0 var(--ink);
+}
+
+.subtitle {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--parchment);
+  opacity: 0.85;
+}
+
+.deck {
+  padding: 20px;
+}
+
+.captain-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(0,0,0,0.25);
+  border: 2px solid var(--gold);
+  border-radius: 14px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.captain-avatar {
+  font-size: 40px;
+}
+
+.captain-info h2 {
+  font-family: 'Pirata One', cursive;
+  font-size: 22px;
+  color: var(--gold-light);
+  letter-spacing: 1px;
+}
+
+.mood {
+  font-size: 14px;
+  color: var(--parchment);
+}
+
+.mood span {
+  color: var(--red);
+  font-weight: bold;
+}
+
+.chat-window {
+  height: 340px;
+  overflow-y: auto;
+  background: rgba(8,16,25,0.6);
+  border: 2px solid var(--wood-light);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.chat-window::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 4px;
+}
+
+.message {
+  display: flex;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message.bot {
+  justify-content: flex-start;
+}
+
+.bubble {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 16px;
+  line-height: 1.45;
+  animation: pop 0.25s ease;
+}
+
+.message.user .bubble {
+  background: var(--gold);
+  color: var(--ink);
+  border-bottom-right-radius: 4px;
+}
+
+.message.bot .bubble {
+  background: #1f2f3d;
+  color: var(--parchment);
+  border: 1px solid var(--wood-light);
+  border-bottom-left-radius: 4px;
+}
+
+@keyframes pop {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+#chatInput {
+  flex: 1;
+  padding: 12px 16px;
+  font-family: 'IM Fell English', serif;
+  font-size: 16px;
+  border: 2px solid var(--wood-light);
+  border-radius: 10px;
+  background: var(--parchment);
+  color: var(--ink);
+  outline: none;
+}
+
+#chatInput:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212,160,23,0.3);
+}
+
+#sendBtn {
+  padding: 12px 20px;
+  font-family: 'Pirata One', cursive;
+  font-size: 18px;
+  letter-spacing: 1px;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.2s ease;
+}
+
+#sendBtn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+#sendBtn:active {
+  transform: translateY(0);
+}
+
+.quick-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 8px 14px;
+  font-family: 'IM Fell English', serif;
+  font-size: 14px;
+  background: rgba(212,160,23,0.15);
+  color: var(--gold-light);
+  border: 1px solid var(--gold);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.chip:hover {
+  background: rgba(212,160,23,0.35);
+}
+
+.foot {
+  text-align: center;
+  padding: 14px;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--parchment);
+  opacity: 0.7;
+  border-top: 2px solid var(--wood-light);
+}
+
+@media (max-width: 480px) {
+  .title { font-size: 26px; }
+  .chat-window { height: 280px; }
+}
