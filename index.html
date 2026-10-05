@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grumpy Pirate AI</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="ship">
+    <header class="masthead">
+      <div class="flag">🏴‍☠️</div>
+      <div class="title-wrap">
+        <h1 class="title">Grumpy Pirate AI</h1>
+        <p class="subtitle">Captain Barnacle's Bad-Mood Bot</p>
+      </div>
+      <div class="skull">☠️</div>
+    </header>
+
+    <main class="deck">
+      <div class="captain-card">
+        <div class="captain-avatar">🧔‍♂️🏴‍☠️</div>
+        <div class="captain-info">
+          <h2>Captain Barnacle</h2>
+          <p class="mood">Mood: <span id="mood">Grumpy</span></p>
+        </div>
+      </div>
+
+      <div class="chat-window" id="chatWindow">
+        <div class="message bot">
+          <div class="bubble">Arrr... what do ye want? Make it quick, I ain't got all tide.</div>
+        </div>
+      </div>
+
+      <form class="input-row" id="chatForm">
+        <input type="text" id="chatInput" placeholder="Ask the grumpy captain somethin'..." autocomplete="off" />
+        <button type="submit" id="sendBtn">⚓ Send</button>
+      </form>
+
+      <div class="quick-chips" id="quickChips">
+        <button class="chip" data-q="What's the weather?">Weather</button>
+        <button class="chip" data-q="Tell me a joke">Joke</button>
+        <button class="chip" data-q="Where's my treasure?">Treasure</button>
+        <button class="chip" data-q="What's for dinner?">Dinner</button>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Built with salt, spite, and sea water. ⚓</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
